@@ -1,0 +1,35 @@
+html, body {
+    height: 100%;
+}
+
+p {
+    margin: 0;
+}
+
+.btn-twitter, .btn-twitter:hover {
+    color: #ffffff;
+    background-color: #55acee;
+}
+
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -60px;
+    text-align: center
+}
+
+.made-by {
+    margin: 5px 0;
+    color: #888888;
+}
+
+header {
+    padding-top: 90px;
+    text-align: center;
+}
+
+nav {
+    margin: 20px 0;
+    background-color: #eeeeee;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="The More Menu">
+	<meta name="author" content="Chris Pattle">
+
+	<title>The "More" Menu</title>
+
+	<link rel="stylesheet" href="vendor/bootstrap.min.css">
+	<link rel="stylesheet" href="dist/css/moreMenu.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="wrap">
+		<div class="container">
+			<header>
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<h1>The "More" Menu</h1>
+						<p>The "More" Menu provides an elegant solution for making menus responsive so you can say goodbye to decreasing font sizes, margins and padding just to be able to fit your navigation onto a single line.</p>
+						<p><b>Give it a try by resizing the browser.</b></p>
+						<p class="made-by">Made by <a href="http://www.chrispattle.com">Chris Pattle</a>.</p>
+						<p><a class="btn btn-large btn-primary" href="https://www.github.com/pattle/more-menu">View on Github</a> <a class="btn btn-large btn-twitter" href="https://www.twitter.com/chrispattle">Follow me on Twitter</a></p>
+					</div>
+				</div>
+			</header>
+			<nav>
+				<div class="row">
+					<div class="col-sm-12">			
+						<ul id="primary-nav" class="nav">
+							<li><a href="#" title="Link">Link</a></li>
+							<li><a href="#" title="Another link">Another link</a></li>
+							<li><a href="#" title="Link three">Link three</a></li>
+							<li><a href="#" title="4th link">4th link</a></li>
+							<li><a href="#" title="This is a longer link">This is a longer link</a></li>
+							<li><a href="#" title="6th">6th</a></li>
+							<li><a href="#" title="Link seven">Link seven</a></li>
+							<li><a href="#" title="Link eight">Link eight</a></li>
+							<li><a href="#" title="Link nine">Link nine</a></li>
+							<li><a href="#" title="Link 10">Link 10</a></li>
+							<li><a href="#" title="Link 11">Link 11</a></li>
+							<li><a href="#" title="Link 12">Link 12</a></li>
+							<li><a href="#" title="Link 13">Link 13</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+	<script src="dist/js/moreMenu.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('#primary-nav').moreMenu();
+		});
+	</script>
+</body>
+</html>
