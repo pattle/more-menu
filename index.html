@@ -1,0 +1,48 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>The "More" Menu example</title>
+	<meta name="description" content="The More Menu">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="apple-touch-icon" href="apple-touch-icon.png">
+	<link rel="stylesheet" href="vendor/bootstrap.min.css">
+	<link rel="stylesheet" href="dist/css/moreMenu.css">
+</head>
+<body>
+	<div class="container">
+		<nav>
+			<div class="row">
+				<div class="col-sm-12">			
+					<ul id="primary-nav" class="nav">
+						<li><a href="#" title="Link">Link</a></li>
+						<li><a href="#" title="Another link">Another link</a></li>
+						<li><a href="#" title="Link three">Link three</a></li>
+						<li><a href="#" title="4th link">4th link</a></li>
+						<li><a href="#" title="This is a longer link">This is a longer link</a></li>
+						<li><a href="#" title="6th">6th</a></li>
+						<li><a href="#" title="Link seven">Link seven</a></li>
+						<li><a href="#" title="Link eight">Link eight</a></li>
+						<li><a href="#" title="Link nine">Link nine</a></li>
+						<li><a href="#" title="Link 10">Link 10</a></li>
+						<li><a href="#" title="Link 11">Link 11</a></li>
+						<li><a href="#" title="Link 12">Link 12</a></li>
+						<li><a href="#" title="Link 13">Link 13</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+	<script src="dist/js/moreMenu.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('#primary-nav').moreMenu();
+		});
+	</script>
+</body>
+</html>
