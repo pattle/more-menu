@@ -1,9 +1,9 @@
-The "More" Menu plugin
+More Menu plugin
 =====================
 
-The "More" Menu provides an elegant solution for making menus responsive.  View the [project page](http://pattle.github.io/more-menu) to see it in action
+More Menu provides an elegant solution for making menus responsive.  View the [project page](http://pattle.github.io/more-menu) to see it in action
 
-The "More" Menu is released under the [MIT License](https://opensource.org/licenses/MIT)
+More Menu is released under the [MIT License](https://opensource.org/licenses/MIT)
 
 Usage
 ------
@@ -12,16 +12,28 @@ Start by including the JS file on your page
 
     <script type="text/javascript" src="path/to/moreMenu.js"></script>
 
+and the CSS file
+
+    <link rel="stylesheet" href="path/to/moreMenu.css">
+
+Your HTML structure will need to be 
+
+    <ul id="primary-nav">
+		<li><a href="/" title="Link">Link</a></li>
+		<li><a href="/" title="Another link">Another link</a></li>
+		....
+	</ul>
+
 Then initialise the plugin on your menu element (e.g the ul)
     
     <script type="text/javascript">
-      $('ul#nav').moreMenu();
+      $('ul#primary-nav').moreMenu();
     </script>
 
 Donate
 -------
 If you found this plugin useful please consider a PayPal donation to chris.pattle@gmail.com
 
-Author:
+Author
 -----------
 [Chris Pattle](http://www.chrispattle.com)

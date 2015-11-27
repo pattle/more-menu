@@ -27,10 +27,10 @@
 
 	MoreMenu.prototype.init = function() {
 		$that = this
-		this.$element.children("li").each(function(index) {
+		this.$element.find("> li").each(function(index) {
 			$that.totalWidth += $(this).outerWidth();
 			$that.visibleWidth += $(this).outerWidth();
-			$that.items[$(this).text()] = {itemwidth: $(this).outerWidth(), itemelement: $(this)};
+			$that.items[$(this).children('a').text()] = {itemwidth: $(this).outerWidth(), itemelement: $(this)};
 		});
 
 		//Reverse the array because we want to be counting from the last nav item not the first
@@ -91,9 +91,24 @@
 		}
 	}
 
+	MoreMenu.prototype.reinit = function() {
+		$that = this
+		this.$element.find("> li:not(.mm-menu)").each(function(index) {
+			$that.items[$(this).children('a').text()] = {itemwidth: $(this).outerWidth(), itemelement: $(this)};
+		});
+
+		//Reverse the array because we want to be counting from the last nav item not the first
+		for(var k in this.items) {
+			this.keys.unshift(k);
+		}
+	}
+
 	MoreMenu.prototype.recalculate = function() {
 		//Update the container width
-		this.containerWidth = this.$element.outerWidth();
+		if(this.$element.outerWidth() != this.containerWidth) {
+			this.containerWidth = this.$element.outerWidth();
+			this.reinit();
+		}
 
 		//Check to see if the window is reducing in width
 		if($(window).width() < this.lastWindowWidth) {
