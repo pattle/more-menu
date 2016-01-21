@@ -30,6 +30,15 @@ Then initialise the plugin on your menu element (e.g the ul)
       $('ul#primary-nav').moreMenu();
     </script>
 
+Options
+-------
+
+You can pass the following options to the `moreMenu` method.  
+
+| Option        | Description   |
+| ------------- |:-------------:|
+| minWidth      | Specify a minimum width for the plugin to start working at |
+
 Donate
 -------
 If you found this plugin useful please consider a PayPal donation to chris.pattle@gmail.com
