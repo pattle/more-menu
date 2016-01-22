@@ -7,7 +7,7 @@
 	var MoreMenu = function (element, options) {
 		this.$element = $(element);
 		this.totalWidth = 0;
-		this.containerWidth = this.$element.width();
+		this.containerWidth = this.$element.outerWidth();
 		this.menuWidth = 0;
 		this.hiddenWidth = 0;
 		this.visibleWidth = 0;
@@ -38,6 +38,8 @@
 	MoreMenu.prototype.init = function() {
 		$that = this;
 		this.uninited = false;
+
+		this.containerWidth = this.$element.outerWidth();
 
 		this.$element.find("> li").each(function(index) {
 			$that.totalWidth += $(this).outerWidth();
@@ -120,7 +122,7 @@
 		});
 
 		this.totalWidth = 0;
-		this.containerWidth = this.$element.width();
+		this.containerWidth = this.$element.outerWidth();
 		this.menuWidth = 0;
 		this.hiddenWidth = 0;
 		this.visibleWidth = 0;
