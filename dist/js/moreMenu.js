@@ -53,8 +53,8 @@
 		}
 
 		this.$element.append(this.options.menuTemplate);
-		this.$element.find('.mm-menu').hide();
-		this.menuWidth = this.$element.find('.mm-menu').outerWidth();
+		this.$element.find('.' + this.options.menuClass).hide();
+		this.menuWidth = this.$element.find('.' + this.options.menuClass).outerWidth();
 
 		//Really don't want to do this.  Needs to find out why total width is smaller than nav width
 		this.totalWidth += 30;
@@ -65,8 +65,8 @@
 	MoreMenu.prototype.down = function() {
 		//Loop until we've hidden the nav items there isn't space for
 		while(this.containerWidth + (this.hiddenWidth - this.menuWidth) <= this.totalWidth) {
-			this.$element.find('.mm-menu').show();
-
+			this.$element.find('.' + this.options.menuClass).show();
+			console.log('.' + this.options.menuClass);
 			this.lastElementVisble++;
 
 			//Update the length of the hidden and visible nav items
@@ -75,7 +75,7 @@
 
 			//Hide the menu item in the main nav and add it to the more menu
 			var $button = this.$element.find("> li a:textEquals('" + this.keys[this.lastElementVisble] + "')").parent().hide().clone();
-			this.$element.find('.mm-dropdown-menu').prepend($button.show());
+			this.$element.find('.' + this.options.dropdownMenuClass).prepend($button.show());
 		}
 	}
 
@@ -85,7 +85,7 @@
 			if(this.visibleWidth + (this.items[this.keys[this.lastElementVisble]].itemwidth + this.menuWidth) < this.containerWidth) {
 				//Show the menu item in the main nav and remove it from the more menu
 				this.items[this.keys[this.lastElementVisble]].itemelement.show();
-				this.$element.find('.mm-dropdown-menu li a:textEquals("' + this.keys[this.lastElementVisble] + '")').remove();
+				this.$element.find('.' + this.options.dropdownMenuClass + ' li a:textEquals("' + this.keys[this.lastElementVisble] + '")').remove();
 
 				//Update the length of the hidden and visible nav items
 				this.visibleWidth += this.items[this.keys[this.lastElementVisble]].itemwidth;
@@ -93,7 +93,7 @@
 				
 				//Update the first element hidden
 				if(this.lastElementVisble === 0) {
-					this.$element.find('.mm-menu').hide();
+					this.$element.find('.' + this.options.menuClass).hide();
 				}
 
 				this.lastElementVisble--;
@@ -103,7 +103,7 @@
 
 	MoreMenu.prototype.reinit = function() {
 		$that = this;
-		this.$element.find("> li:not(.mm-menu)").each(function(index) {
+		this.$element.find("> li:not(." + this.options.menuClass + ")").each(function(index) {
 			$that.items[$(this).children('a').text()] = {itemwidth: $(this).outerWidth(), itemelement: $(this)};
 		});
 
@@ -115,7 +115,7 @@
 
 	MoreMenu.prototype.uninit = function() {
 		this.uninited = true;
-		this.$element.find('.mm-menu').remove();
+		this.$element.find('.' + this.options.menuClass).remove();
 
 		this.$element.find("> li").each(function(index) {
 			$(this).show();
