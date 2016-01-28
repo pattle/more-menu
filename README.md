@@ -10,25 +10,33 @@ Usage
 
 Start by including the JS file on your page
 
-    <script type="text/javascript" src="path/to/moreMenu.js"></script>
+````html
+<script type="text/javascript" src="path/to/moreMenu.js"></script>
+````
 
 and the CSS file
 
-    <link rel="stylesheet" href="path/to/moreMenu.css">
+````html
+<link rel="stylesheet" href="path/to/moreMenu.css">
+````
 
 Your HTML structure will need to be 
 
-    <ul id="primary-nav">
-		<li><a href="/" title="Link">Link</a></li>
-		<li><a href="/" title="Another link">Another link</a></li>
-		....
-	</ul>
+````html
+<ul id="primary-nav">
+	<li><a href="/" title="Link">Link</a></li>
+	<li><a href="/" title="Another link">Another link</a></li>
+	....
+</ul>
+```
 
 Then initialise the plugin on your menu element (e.g the ul)
-    
-    <script type="text/javascript">
-      $('ul#primary-nav').moreMenu();
-    </script>
+
+````javascript
+<script type="text/javascript">
+    $('ul#primary-nav').moreMenu();
+</script>
+````
 
 Options
 -------
@@ -38,6 +46,9 @@ You can pass the following options to the `moreMenu` method.
 | Option        | Description   |
 | ------------- |:-------------:|
 | minWidth      | Specify a minimum width for the plugin to start working at |
+| menuTemplate  | Suppy HTML for the more menu |
+| menuClass     | If you supply custom HTML for the menu you need to supply the class name of the `li` |
+| dropdownMenuClass | If you supply custom HTML for the menu you need to supply the class of the dropdown menu (`ul`) | 
 
 Donate
 -------
